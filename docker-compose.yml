@@ -1,0 +1,13 @@
+services:
+    app:
+        build: .
+        environment:
+            - SOURCE=1
+            - NAME=fil
+        container_name: svg-parse
+        command: python src/main.py
+        ports:
+            - 80:80
+            - 5678:5678
+        volumes:
+            - .:/code
